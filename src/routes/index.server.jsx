@@ -18,6 +18,7 @@ import snowboard from '~/assets/snowboard-mobile.jpg';
 import {Image} from '@shopify/hydrogen';
 
 import {HeroImage} from '~/components/HeroImage.client';
+import video from '~/assets/Snowboarding.mp4'
 
 export default function Homepage() {
   useServerAnalytics({
@@ -68,7 +69,11 @@ function HomepageContent() {
 
       <Image src={snowboard} width="200" height="100" />
       <HeroImage />
-        
+       
+       <video width="320" height="240" controls>
+        <source src={video} type="video/mp4"/>
+       </video>
+
       <ProductSwimlane
         data={featuredProducts.nodes}
         title="Featured Products"
