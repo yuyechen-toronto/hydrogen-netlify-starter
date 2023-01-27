@@ -14,6 +14,11 @@ import {getHeroPlaceholder} from '~/lib/placeholders';
 import {FeaturedCollections, Hero} from '~/components';
 import {Layout, ProductSwimlane} from '~/components/index.server';
 
+import snowboard from '~/assets/snowboard-mobile.jpg';
+import {Image} from '@shopify/hydrogen';
+
+import {HeroImage} from '~/components/HeroImage.client';
+
 export default function Homepage() {
   useServerAnalytics({
     shopify: {
@@ -60,6 +65,10 @@ function HomepageContent() {
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
+
+      <Image src={snowboard} width="200" height="100" />
+      <HeroImage />
+        
       <ProductSwimlane
         data={featuredProducts.nodes}
         title="Featured Products"
